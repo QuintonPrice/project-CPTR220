@@ -1,0 +1,53 @@
+/* about me - img */
+#about img {
+    display: block;
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* bike setup section*/
+#setup {
+    margin-top: 50px;
+}
+
+/* bike setup image */
+#bike-setup img {
+    display: block;
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 75%;
+        box-shadow: 2.5px 2.5px 2.5px 2.5px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container{
+        max-width: 60%
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 70%;
+    }
+}
+
+footer {
+    margin-top: 20px;
+}
