@@ -39,10 +39,10 @@ img {
 
 /* temporary padding fix for paragraphs */
 /* UPDATE THIS!!!! */
-p {
+/* p {
     padding: 3px;
     text-align: justify;
-}
+} */
 
 /* img in "images" section */
 #images img {
@@ -94,13 +94,13 @@ nav li {
 }
 
 /* container*/
-.container {
+/* .container {
     background-color: #fcfcfc;
     width: 95%;
     padding: 30px;
     font-size: 1.5em;
     box-shadow: 5px 5px 5px 5px;
-}
+} */
 
 /* h2 element in .container */
 .container h2 {
