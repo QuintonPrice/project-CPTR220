@@ -1,0 +1,35 @@
+.container {
+    background-color: #fcfcfc;
+    padding: 10px;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 5px 5px;
+    margin-top: 10px;
+}
+
+/* Extra space, fix later*/
+#input-box {
+    width: 13.5em;
+}
+
+#resultDistance, #resultCost {
+    display: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.results {
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+}
+
+#weather {
+    display: none;
+}
+
+#localWeather, #setWeather, #difference {
+    display: none;
+    width: 40%;
+    text-align: center;
+}
