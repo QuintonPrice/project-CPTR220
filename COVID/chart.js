@@ -18,7 +18,7 @@ graphBtnShow.addEventListener("click", () => {
 
 function displayResults() {
   if(chart != null) {
-      chart.destroy();
+      chart.destrogy();
   }
   let myChart = document.getElementById("myChart").getContext("2d");
   //ENTER ERROR CHECKING FOR ACTIVE, CONFIRMED, AND DEATH
