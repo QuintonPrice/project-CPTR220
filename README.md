@@ -1,6 +1,10 @@
-# Course Project
+# CPTR220 Project
 
-This repository contains practice exercises for the _Web Application Development_ at WWU.
-It has been adapted from _Client-Side Web Development_ course at the UW iSchool.
+Our teams CPTR220 project is a local guide for the area of Seattle. This would be very helpful to anyone thinking about visiting Seattle and not knowing where to go or what to see. Our site includes subsections for relevant topics like hiking/biking trails, sites to see, and best places to stay.
 
-The site can be viewed at <https://wwu-cptr220-a20.github.io/project-yourusername/>
+# Members
+
+ - [Quintin Price](https://github.com/QuintonPrice)
+ - [Joel Hartman](https://github.com/joelhart)
+ - [Mikhail Beresnev](https://github.com/Mikhail-Beresnev)
+ - [Matija Benko](https://github.com/l-Mana-l)

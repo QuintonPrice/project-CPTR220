@@ -7,7 +7,7 @@
     <meta charset="utf-8">
 
     <!-- site info -->
-    <meta name="author" content="Quinton Price">
+    <meta name="author" content="Mikhail Beresnev">
     <meta name="description" content="About Me - Location, Bike, Life">
     <meta name="keywords" content="seattle, pnw, food, washington, mountain, bike, seattle">
 
@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="travel.css">
+    <!-- <link rel="stylesheet" href="travel.css"> -->
+    <link rel="stylesheet" href="travelM.css">
 
     <title>Travel - WA Trails</title>
 </head>
@@ -46,17 +47,38 @@
 
     <main>
 
-        <div class="container">
+        <main>
+            <header id="header">
+                <h1>Travel Guide</h1>
+            </header>
+    
+            <div class="">
+                <div class="container" id="input-box">
+                    <div class="input-group">
+                        <input class="input-group-text" id="zip-input" type="text" placeholder="zipcode">
+                        <button class="btn btn-primary" id="zip-button">Submit</button>
+                    </div>
+                </div>
+    
+                <div class="d-flex" id="weather">
+                    <div class="container center" id="localWeather"></div>
+                    <div class="container center" id="difference"></div>
+                    <div class="container center" id="setWeather"></div>
+                    <div id="map" alt="map"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- <div class="container">
             <section id="about">
                 <h2>About</h2>
                 <hr>
                 <p class="font-weight-bold">This section will be used for the Travel page.</p>
 
             </section>
-        </div>
+        </div> -->
 
-
-        <div class="container">
+        <!-- <div class="container">
             <h2>Contact</h2>
 
             <form id="signUpForm" class="form" novalidate>
@@ -90,17 +112,18 @@
                 <button type="submit" class="btn btn-primary">Send</button>
 
             </form>
-        </div>
+        </div> -->
     </main>
 
     <footer>
-        <a href="mailto:quintonp10@gmail.com">Contact</a>.
-        Quinton Price &copy;. All rights reserved.
+        <a href="mailto:MBeresnev01@gmail.com">Contact</a>.
+        Mikhail Beresnev &copy;. All rights reserved.
     </footer>
 
     <!-- scripts -->
     <script src="../../js/main.js"></script>
     <script src="../../js/travel.js"></script>
+    <script src="travel.js"></script>
 
 </body>
 
