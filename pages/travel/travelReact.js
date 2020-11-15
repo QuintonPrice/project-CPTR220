@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './travelM.css';
 
 const URL_TEMPLATE_ZIP_TO_DISTANCE =
     'https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/Ot7eldouIkrhNUnVjwaElVxvRrIvbw95DXqCEmV8til7Suuu6nTrCLd8Ve9D53i0/distance.json/<zip_code1>/<zip_code2>/mile'
