@@ -28,8 +28,16 @@ p {
     display: none;
 }
 
-#localWeather, #setWeather, #difference {
+#localWeather, #setWeather {
     display: none;
     width: 40%;
     text-align: center;
+}
+
+#difference {
+    display: none;
+    width: 20%;
+    text-align: center;
+    margin-right: 5em;
+    margin-left: 5em;
 }
