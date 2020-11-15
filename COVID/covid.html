@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="https://static.thenounproject.com/png/61121-200.png">
+    <meta charset="utf-8">
+
+    <!-- site info -->
+    <meta name="author" content="Matija B, Quinton P, Mikhail B, Joel H">
+    <meta name="description" content="Price Estimations for HouseHold or Apartments">
+    <meta name="keywords" content="washington, rent, sleep in, apartment">
+    <title>Home - WA Trails</title>
+
+    <!-- Viewport info -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--- Libaries --->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- styling-->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="covid.css">
+</head>
+
+<body>
+    <div class="rentContainer">
+        <h2 class="text-center">COVID CASES</h2>
+        <div class="input">
+            <input type="text" class="provinceValue" placeholder="Enter Province Name (OPTIONAL)">
+            <input type="text" class="isoValue" placeholder="Enter Country ISO code">
+            <input type="text" class="cityValue" placeholder="Enter City Name (OPTIONAL)">
+            <input type="text" class="dateValue" placeholder="Enter Valid Date (OPTIONAL)">
+            <input type="submit" value="Submit" class="submit-button">
+
+            <label><input type="checkbox" id="Check1" value="bar" onclick="selectOnlyThis(this.id)" />Bar Graph</label>
+            <label><input type="checkbox" id="Check2"  value="pie" onclick="selectOnlyThis(this.id)" />Doughnut Graph</label>
+            <label><input type="checkbox" id="Check3" value="polarArea" onclick="selectOnlyThis(this.id)" />Polar Area Graph</label>
+            
+            <button>Graph</button>
+
+        </div>
+
+        <div class="display">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <footer>
+        <p>Data From:
+            <a href="https://rapidapi.com/moneals/api/rent-estimate">API SOURCE</a>
+        </p>
+    </footer>
+    <script src="covidprojection.js"></script>
+    <script src="chart.js"></script>
+</body>
+
+</html>
