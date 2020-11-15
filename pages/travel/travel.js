@@ -20,101 +20,16 @@ button.addEventListener('click', function() {
   for (let i = 0; i < 5; i++) {
     zip1 = zip1 + inputString[i];
   }
-//   showDistance(2336.384);
-//   fetchDistance(zip1, zip2);
-  fetchWeather(zip1, '#localWeather');
-  fetchWeather(zip2, '#setWeather');
-  // let localData = fetchWeather(zip1, '#localWeather');
-  // let setData = fetchWeather(zip2, '#setWeather');
-  //showDifference(localData, setData, zip1, zip2);
+  showDifference(zip1, zip2, '#localWeather', '#setWeather');
 });
 
-
 function fetchDistance(zip1, zip2) {
-  console.log('fetching Distance');
   let url = URL_TEMPLATE_ZIP_TO_DISTANCE;
   url = url.replace('<zip_code1>', zip1);
   url = url.replace('<zip_code2>', zip2);
   let promise = fetch(url);
-  promise
-      .then(response => {
-        let dataPromise = response.json()
-        return dataPromise;
-      })
-      .then(data => {
-        console.log('fetched Distance');
-        return data['distance'];
-        //showDistance(data['distance']);
-      });
+  return promise;
 }
-
-function showDistance(distance) {
-  distance = distance.toFixed(0);
-  let resultsD = document.querySelector('#resultDistance');
-  resultsD.innerHTML = '';
-
-  let divArea1 = document.createElement('div');
-  divArea1.classList.add('container');
-  divArea1.classList.add('results');
-  divArea1.style.width = '13em'
-  let distanceText = document.createElement('p');
-  distanceText.textContent = 'Distance: ' + String(distance) + ' miles away';
-  divArea1.append(distanceText);
-  resultsD.appendChild(divArea1);
-  resultsD.style.display = 'block';
-
-  // let resultsC = document.querySelector('#resultCost');
-  // resultsC.innerHTML = '';
-  // let divArea2 = document.createElement('div');
-  // divArea2.classList.add('container');
-  // divArea2.classList.add('results');
-  // divArea2.style.width = '14em'
-  // let costText = document.createElement('p');
-  // costText.textContent = "Average flight cost: $" + String(distance*.11);
-  // divArea2.append(costText);
-  // resultsC.appendChild(divArea2);
-
-  // resultsC.style.display = "block";
-}
-
-function fetchLocation(zip1, zip2) {
-  let url = URL_TEMPLATE_ZIPS_TO_LOCATION;
-  url = url.replace('<zip_code1>', zip1);
-  url = url.replace('<zip_code2>', zip2);
-  let promise = fetch(url);
-  promise
-      .then(response => {
-        let dataPromise = response.json();
-        return dataPromise;
-      })
-      .then(data => {
-        // do stuff
-      });
-}
-
-function fetchWeather(zip, id) {
-  let url = URL_TEMPLATE_ZIP_TO_WEATHER;
-  url = url.replace('<zip_code>', zip);
-  let promise = fetch(url);
-  promise
-    .then(response => {
-      let dataPromise = response.json();
-      return dataPromise;
-    })
-    .then (data => {
-      showWeather(data, id);
-    });
-}
-
-/*
-let fetchWeatherObject = async (zip) => {
-  let url = URL_TEMPLATE_ZIP_TO_WEATHER;
-  url = url.replace('<zip_code>', zip);
-  let response = await fetch(url);
-  return response.json();
-}
-
-*/
 
 function showWeather(data, id) {
   let div = document.querySelector(id);
@@ -123,17 +38,14 @@ function showWeather(data, id) {
 
   let nameHeader = document.createElement('h2');
   let regionHeader = document.createElement('h3');
-  //let countryHeader = document.createElement('h4');
   let timeHeader = document.createElement('h5');
 
   nameHeader.textContent = location['name'];
   regionHeader.textContent = location['region'];
-  //countryHeader.textContent = location['country'];
   timeHeader.textContent = location['localtime'];
 
   div.append(nameHeader);
   div.append(regionHeader);
-  //div.append(countryHeader);
   div.append(timeHeader);
   div.append(document.createElement('br'));
   /* ------------------------- */
@@ -159,26 +71,44 @@ function showWeather(data, id) {
   div.style.display = 'block';
 }
 
-function showDifference(localData, setData, zip1, zip2) {
+function fetchWeather(zip, id) {
+  let url = URL_TEMPLATE_ZIP_TO_WEATHER;
+  url = url.replace('<zip_code>', zip);
+  let promise = fetch(url);
+  return promise;
+}
 
-  let div = document.querySelector('#difference');
-  let title = document.createElement('h3');
-  let distance = document.createElement('h4');
-  let time = document.createElement('h4');
-  console.log('test');
-  title.textContent = 'Difference';
-  distance.textContent = 'Distance: ' + String(fetchDistance(zip1, zip2)) + ' miles away';
-  console.log(distance.textContent);
-  time.textContent = 'Time: ' + getTimeDifference(getTime(data[0]), getTime(data[1]));
+function showDifference(zip1, zip2, id1, id2) {
+  Promise.all([fetchWeather(zip1, id1), fetchWeather(zip2, id2), fetchDistance(zip1, zip2)]).then(async([aa, bb, cc]) => {
+    const a = await aa.json();
+    const b = await bb.json();
+    const c = await cc.json();
+    return [a, b, c];
+  }).then(data => {
+    console.log(data);
+    showWeather(data[0], id1);
+    showWeather(data[1], id2);
+    let div = document.querySelector('#difference');
+    let title = document.createElement('h3');
+    let distance = document.createElement('h5');
+    let time = document.createElement('h5');
+    let celcius = document.createElement('h5')
+    let farenheit = document.createElement('h5');
+    title.textContent = 'Difference';
+    distance.textContent = 'Distance: ' + String(data[2]['distance'].toFixed(0)) + ' miles away';
+    time.textContent = 'Time: ' + getTimeDifference(getTime(data[0]), getTime(data[1]));
+    celcius.textContent = getTempDifferenceC(data[0]['current']['temp_c'], data[1]['current']['temp_c']) + ' C';
+    farenheit.textContent = getTempDifferenceF(data[0]['current']['temp_f'], data[1]['current']['temp_f']) + ' F';
 
-  // console.log(title);
-  // console.log(distance);
-  // console.log(time);
-  div.append(title);
-  div.append(distance);
-  div.append(time);
 
-  div.style.display = 'block';
+    div.append(title);
+    div.append(distance);
+    div.append(time);
+    div.append(celcius);
+    div.append(farenheit);
+
+    div.style.display = 'block';
+  });
 }
 
 function getTime(data) {
@@ -199,9 +129,11 @@ function getTimeDifference(localTime, setTime) {
   setTimeMn = parseInt(setTime.substring(3));
 
   let timeHourDifference =  setTimeHr - localTimeHr;
-  if (timeHourDifference < 0) {
+  if (timeHourDifference < 0 && timeHourDifference < -12) {
     time = time.concat('-');
     timeHourDifference += 24;
+  } else if (timeHourDifference < 0) {
+    // do nothing
   } else {
     time = time.concat('+');
   }
@@ -213,5 +145,16 @@ function getTimeDifference(localTime, setTime) {
   time = time.concat(String(timeHourDifference));
   time = time.concat(':')
   time = time.concat(String(timeMinuteDifference));
+  time = time.concat('0');
   return time;
+}
+
+function getTempDifferenceC(localTemp, setTemp) {
+  let tempDifference = setTemp - localTemp;
+  return tempDifference.toFixed(1);
+}
+
+function getTempDifferenceF(localTemp, setTemp) {
+  let tempDifference = setTemp - localTemp;
+  return tempDifference.toFixed(1);
 }
