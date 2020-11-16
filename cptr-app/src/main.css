@@ -12,11 +12,11 @@ a:hover {
 
 /* body */
 body {
-    background-image: url("../public/img/backgrounds/topography.png");
+    background-image: url("./img/backgrounds/topography.png");
 }
 
 .body-dark {
-    background-image: url("../public/img/backgrounds/topography_dark.png");
+    background-image: url("./img/backgrounds/topography_dark.png");
 }
 
 /* header */
