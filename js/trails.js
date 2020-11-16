@@ -17,7 +17,7 @@ function getOneDayForecast() {
             var nameValue = data['name'];
             var tempCur = data['main']['temp'];
             var tempMax = data['main']['temp_max'];
-            var tempMin = data['main']['temp_min']
+            var tempMin = data['main']['temp_min'];
             var descValue = data['weather'][0]['description'];
 
             // below functions create DOM <p> elements w/ weather info
