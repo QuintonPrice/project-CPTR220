@@ -18,7 +18,7 @@ graphBtnShow.addEventListener("click", () => {
 
 function displayResults() {
   if(chart != null) {
-      chart.destrogy();
+      chart.destroy();
   }
   let myChart = document.getElementById("myChart").getContext("2d");
   //ENTER ERROR CHECKING FOR ACTIVE, CONFIRMED, AND DEATH
@@ -26,13 +26,13 @@ function displayResults() {
   chart = new Chart(myChart, {
     type: checkbox.value, // bar, horizontalBar, line, pie, polarArea, doughnut, radar
     data: {
-      labels: ["San Jose", "Santa Clara", "Santa Cruz", "test"],
+      labels: ["Population", "Active", "Confirmed", "Deaths"],
       datasets: [
         {
           label: "Infected",
           data: [totalPopulation, active, confirmed, deaths],
           //backgroundColor: 'green'
-          backgroundColor: ["red", "blue", "green", "orange"],
+          backgroundColor: ["Green", "Red", "Yellow", "Black"],
           borderWidth: 2,
           borderColor: "black",
           hoverBorderWidth: 3,

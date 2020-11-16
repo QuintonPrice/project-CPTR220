@@ -2,12 +2,12 @@
 var resultButton = document.querySelector(".submit-button");
 
 // Mandatory Values From User
-var iso = document.querySelector(".isoValue");
-var date = document.querySelector(".dateValue");
+var iso = document.querySelector("#isoValue");
+var date = document.querySelector("#dateValue");
 
 //Optional Values From User
-var province = document.querySelector(".provinceValue");
-var city = document.querySelector(".cityValue");
+var province = document.querySelector("#provinceValue");
+var city = document.querySelector("#cityValue");
 
 //Data Holders For COVID API
 var active;
