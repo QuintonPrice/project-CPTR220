@@ -1,3 +1,5 @@
+// Weather app component
+
 import React, { Component } from 'react';
 
 class WeatherDisplay extends Component {
@@ -12,7 +14,7 @@ class WeatherDisplay extends Component {
     }
 }
 
-// weather app
+
 class WeatherInfo extends Component {
 
     //constructor for WeatherInfo

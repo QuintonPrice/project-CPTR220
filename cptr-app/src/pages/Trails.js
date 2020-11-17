@@ -1,8 +1,9 @@
+// Trails page
+
 import React, { Component } from 'react';
-import DarkMode from '../App.js';
-import WeatherDisplay from './WeatherApp.js';
-import {Header} from '../App.js';
-import {NavBar} from '../App.js';
+import WeatherDisplay from '../components/WeatherApp.js';
+import Header from '../components/Header.js'; // header component
+import NavBar from '../components/NavBar.js'; // navbar component
 import '../main.css'; // main css file
 import './trails.css'; // trails css file
 
@@ -12,7 +13,6 @@ class Trails extends Component {
             <div>
                 <WeatherDisplay />
                 <NavBar />
-                <DarkMode />
                 <Header />
                 <Blurb />
                 <TrailList />

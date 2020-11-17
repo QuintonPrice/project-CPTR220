@@ -1,4 +1,4 @@
-// use this file for scripts you want to apply globally
+// Dark mode component
 
 import React, { Component } from 'react';
 

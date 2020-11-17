@@ -1,3 +1,5 @@
+// Home page
+
 import React, { Component } from 'react'; //import React Component
 import '../main.css'; // main css file
 
