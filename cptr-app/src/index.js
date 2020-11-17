@@ -1,6 +1,6 @@
 import React from 'react'; // imports React
 import ReactDOM from 'react-dom'; 
-import App from './components/Trails';
-import Trails from './components/Trails';
+import Trails from './components/Trails'; // trails page
 
-ReactDOM.render(<App />, document.getElementById('root')); // renders App, which renders page
+// renders Trail class, which renders pag
+ReactDOM.render(<Trails />, document.getElementById('root')); 
