@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DarkMode from '../App.js';
-import WeatherApp from './WeatherApp';
+import WeatherDisplay from './WeatherApp';
 import '../main.css'; // main css file
 import './trails.css'; // trails css file
 
@@ -8,7 +8,7 @@ class Trails extends Component {
     render() {
         return (
             <div>
-                <WeatherApp />
+                <WeatherDisplay />
                 <NavBar />
                 <DarkMode />
                 <Header />

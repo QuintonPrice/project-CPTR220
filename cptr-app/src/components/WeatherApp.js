@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
 
-// weather app
-class WeatherApp extends Component {
+class WeatherDisplay extends Component {
+    render() {
+        return (
+            <div className="container" id="weather">
+                <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
+                <p>Enter the city you wish to travel to below and see what the weather is like currently.</p>
+                <WeatherInfo />
+            </div>
+        );
+    }
+}
 
-    //constructor for app
+// weather app
+class WeatherInfo extends Component {
+
+    //constructor for WeatherInfo
     constructor(props) {
         super(props);
         this.state = {
-            weather: []
+            nameVal: '',
+            tempCur: '',
+            tempMax: '',
+            tempMin: '',
+            descVal: ''
         }
     }
 
@@ -17,20 +33,32 @@ class WeatherApp extends Component {
         fetch('https://api.openweathermap.org/data/2.5/weather?q=puyallup&units=imperial&appid=fa7db483534aae10d27013e2df031ed2')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ weather: data })
+                this.setState({
+                    // stores weather info into state
+                    nameVal: data['name'],
+                    tempCur: data['main']['temp'],
+                    tempMax: data['main']['temp_max'],
+                    tempMin: data['main']['temp_min'],
+                    descVal: data['weather'][0]['description']
+                })
             })
             .catch(console.log)
     }
 
     render() {
-        console.log(this.state.weather); // logs out API information
+        console.log(this.state.nameValue); // test log
         return (
+            // prints weather info
             <div>
-                <p className="font-weight bold">{this.state.weather.name}</p>
+                <h3 className="font-weight bold">{this.state.nameVal}</h3>
+                <p>Weather: {this.state.descVal} </p>
+                <p>Current Temp: {this.state.tempCur} {String.fromCharCode(176)}F</p>
+                <p>Max Temp: {this.state.tempMax} {String.fromCharCode(176)}F</p>
+                <p>Min Temp: {this.state.tempMin} {String.fromCharCode(176)}F</p>
             </div>
 
         );
     }
 }
 
-export default WeatherApp; // exports weatherApp
+export default WeatherDisplay; // exports weatherApp
