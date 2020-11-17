@@ -1,23 +1,29 @@
+// things that are used globally
 import React, { Component } from 'react';
 
-class DarkMode extends Component {
-  // sets state, used to track if dark mode is on
-  state = {
-    darkModeEnable: false
-  }
-
-  // toggles darkModeEnable state
-  toggleDarkMode = () => {
-    this.setState({
-      darkModeEnable: !this.state.darkModeEnable
-    });
-    console.log(this.state.darkModeEnable);
-  }
-
-  // renders clickable button
-  render() {
-    return <button onClick={this.toggleDarkMode} className="button btn-dark" id="dark_mode">Dark Mode</button>
-  }
+// header for website
+class Header extends Component {
+    render() {
+        return (
+            <header id="header">
+                <h1>Pacific Northwest Trails</h1>
+            </header>
+        );
+    }
 }
 
-export default DarkMode; // exports DarkMode
+// navigation bar class
+class NavBar extends Component {
+    render() {
+        return (
+            <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="../travel/travel.html">Travel</a></li>
+                <li><a href="../housing/housing.html">Housing</a></li>
+            </nav>
+        );
+    }
+}
+
+export default {Header, NavBar}
