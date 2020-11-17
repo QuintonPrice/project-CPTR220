@@ -24,66 +24,105 @@
     <!-- styling-->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
         rel="stylesheet" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="covid.css" />
 </head>
 
 <body>
     <div class="container">
-        <h2>Country Category</h2>
-        <div class="select-box">
+            <h2>Country Category</h2>
+            <div class="select-box">  
+                <div class="options-container">  
+                    <div class="option">
+                        <input type="radio" value="USA" class="radio" id="USA" name="Country" />
+                        <label for="USA">United States of America</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" value="blank" class="radio" name="City" />
+                        <label for="blank">None</label>
+                    </div>
+                </div>
+                <div class="select">Select Country</div>
+                <div class="search-box">
+                    <input type="text" placeholder="Type"/>
+                </div>
+            </div>
+
+            <h2>State Category</h2>
+            <div class="select-box">
             
-            <div class="options-container">  
-                <div class="option">
-                    <input type="radio" class="radio" id="CAN" name="category" />
-                    <label for="CAN">Canada</label>
+                <div class="options-container">  
+                    <div class="option">
+                        <input type="radio" value="Washington" class="radio" id="WA" name="State" />
+                        <label for="WA">Washington</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="blank" class="radio" name="City" />
+                        <label for="blank">None</label>
+                    </div>
                 </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="USA" name="category" />
-                    <label for="USA">United States of America</label>
+                <div class="select">Select State</div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Type"/>
                 </div>
             </div>
-            <div class="select">Select Country</div>
 
-            <div class="search-box">
-                <input type="text" placeholder="Type"/>
+            <h2>City Category</h2>
+            <div class="select-box">
+                <div class="options-container">  
+                    <div class="option">
+                        <input type="radio" value="Spokane" class="radio" id="spokane" name="City" />
+                        <label for="spokane">Spokane</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="Yakima" class="radio" id="yakima" name="City" />
+                        <label for="yakima">Yakima</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="Walla Walla" class="radio" id="walla walla" name="City" />
+                        <label for="walla walla">Walla Walla</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="blank" class="radio" name="City" />
+                        <label for="blank">None</label>
+                    </div>
+                </div>
+                
+                <div class="select">Select City</div>
+                <input type="date" id="dateValue" class="form-control" />
+                <div class="search-box">
+                    <input type="text" placeholder="Type"/>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="rentContainer">
-        <h2 class="text-center">COVID CASES</h2>
-
-       
-
-        <div class="input">
-            <input type="text" id="isoValue" class="form-control" placeholder="Enter Country ISO code" />
-            <input type="text" id="provinceValue" class="form-control" placeholder="Enter Province Name" />
-            <input type="text" id="cityValue" class="form-control" placeholder="Enter City Name (OPTIONAL)" />
-
-            <label for="dobInput" class="col-lg-1">Enter Date</label>
-            <div class="col-lg-11">
-                <input type="date" id="dateValue" class="form-control" required />
-                <div id="dobFeedback" class="invalid-feedback"></div>
+            <div class="radioBox">
+                <h1>Please Select Type of Graph</h1>
+                <div class="radio-container">
+                    <input type="radio" value="bar" id="bar" name="graph"/>
+                    <label class="radioOption" for="bar">Bar Graph</label>
+        
+                    <input type="radio" value="pie" id="pie" name="graph" />
+                    <label class="radioOption" for="pie">Pie Graph</label>
+        
+                    <input type="radio" value="polarArea" id="polarArea" name="graph" />
+                    <label class="radioOption" for="polarArea">PolarArea Graph</label>
+                </div>
             </div>
-
-            <input type="submit" value="Submit" class="submit-button" />
-
-            <!--Values for Tpye Of Chart-->
-            <label><input type="checkbox" id="Check1" value="bar" onclick="selectOnlyThis(this.id)" />Bar Graph</label>
-            <label><input type="checkbox" id="Check2" value="pie" onclick="selectOnlyThis(this.id)" />Doughnut
-                Graph</label>
-            <label><input type="checkbox" id="Check3" value="polarArea" onclick="selectOnlyThis(this.id)" />Polar Area
-                Graph</label>
-
-            <button>Graph</button>
-        </div>
-
-        <!-- Display Chart -->
-        <div class="display">
-            <canvas id="myChart"></canvas>
-        </div>
+            <button class="btn" type="button">Submit</button>
     </div>
+    <div class="display">
+        <div class="loader-wrapper" id="loadIcon">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <h3>Loading . . .</h3>
+          </div>
+        <canvas id="myChart" width="2em" height="2em"></canvas>
+    </div>
+    
+   
     <footer>
         <p>
             Data From:

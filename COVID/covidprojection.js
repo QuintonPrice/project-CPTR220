@@ -1,23 +1,53 @@
-//Values From User Input
-var resultButton = document.querySelector(".submit-button");
+let buttonResult = document.querySelector("button");
 
-// Mandatory Values From User
-var iso = document.querySelector("#isoValue");
-var date = document.querySelector("#dateValue");
+//Holding Values From User Input
+var userCountry;
+var userState;
+var userCity;
+var date;
+var graph;
 
-//Optional Values From User
-var province = document.querySelector("#provinceValue");
-var city = document.querySelector("#cityValue");
-
-//Data Holders For COVID API
+//Holding Values For COVID API Data
 var active;
 var confirmed;
 var deaths;
 
-function covidDataResult() {
-  if (city.value.length == 0 && province.value.length == 0) {
+function getDataValuesCallBack(event) {
+  event.preventDefault();
+
+  let listCountry = document.getElementsByName("Country");
+  let listState = document.getElementsByName("State");
+  let listCities = document.getElementsByName("City");
+  let listGraph = document.getElementsByName("graph");
+
+  date = document.getElementById("dateValue");
+
+  for(i = 0; i<listCountry.length; i++) {
+      if(listCountry[i].checked) {
+        userCountry = listCountry[i].value;
+      }
+  }
+
+  for(i = 0; i<listState.length; i++) {
+    if(listState[i].checked) {
+      userState = listState[i].value;
+    }
+  }
+
+  for(i = 0; i<listCities.length; i++) {
+    if(listCities[i].checked) {
+      userCity = listCities[i].value;
+    }
+  }
+
+  for(i = 0; i<listGraph.length; i++) {
+    if(listGraph[i].checked) {
+      graph = listGraph[i].value;
+    }
+  }
+  if (userCity == null && userState == null) {
     fetch(
-      "https://covid-19-statistics.p.rapidapi.com/reports?iso=" + iso.value,
+      "https://covid-19-statistics.p.rapidapi.com/reports?iso=" + userCountry +"&date=" + date.value,
       {
         method: "GET",
         headers: {
@@ -34,12 +64,12 @@ function covidDataResult() {
       .catch((err) => {
         console.error(err);
       });
-  } else if (city.value.length == 0) {
+  } else if (userCity == null) {
     fetch(
       "https://covid-19-statistics.p.rapidapi.com/reports?region_province=" +
-        province.value +
+        userState +
         "&iso=" +
-        iso.value,
+          userCountry +"&date=" + date.value,
       {
         method: "GET",
         headers: {
@@ -62,11 +92,11 @@ function covidDataResult() {
   } else {
     fetch(
       "https://covid-19-statistics.p.rapidapi.com/reports?region_province=" +
-        province.value +
+        userState +
         "&iso=" +
-        iso.value +
+       userCountry +
         "&city_name=" +
-        city.value +
+        userCity +
         "&date=" +
         date.value,
       {
@@ -80,6 +110,7 @@ function covidDataResult() {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         active = data["data"][0]["active"];
         confirmed = data["data"][0]["confirmed"];
         deaths = data["data"][0]["deaths"];
@@ -88,6 +119,11 @@ function covidDataResult() {
         console.error(err);
       });
   }
+
+  
 }
 
-resultButton.addEventListener("click", covidDataResult);
+
+buttonResult.addEventListener("click", getDataValuesCallBack);
+
+

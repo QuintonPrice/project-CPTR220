@@ -1,22 +1,8 @@
-//Input From User
-var graphBtnShow = document.querySelector("button");
-var checkbox;
-
 var chart;
 
-//Limit to only one box to be checked
-function selectOnlyThis(id) {
-  for (var i = 1; i <= 3; i++) {
-    document.getElementById("Check" + i).checked = false;
-  }
-  document.getElementById(id).checked = true;
-}
-//Grabs Type of Graph
-graphBtnShow.addEventListener("click", () => {
-  checkbox = document.querySelector('input[type="checkbox"]:checked');
-});
 
 function displayResults() {
+  toggleLoaderOff();
   if(chart != null) {
       chart.destroy();
   }
@@ -24,7 +10,7 @@ function displayResults() {
   //ENTER ERROR CHECKING FOR ACTIVE, CONFIRMED, AND DEATH
   let totalPopulation = active + confirmed;
   chart = new Chart(myChart, {
-    type: checkbox.value, // bar, horizontalBar, line, pie, polarArea, doughnut, radar
+    type: graph, // bar, horizontalBar, line, pie, polarArea, doughnut, radar
     data: {
       labels: ["Population", "Active", "Confirmed", "Deaths"],
       datasets: [
@@ -64,4 +50,9 @@ function displayResults() {
   });
   chart.update();
 }
-graphBtnShow.addEventListener("click", displayResults);
+
+buttonResult.addEventListener("click", function() {
+  toggleLoaderOn();
+  setTimeout(displayResults, 2000);
+});
+
