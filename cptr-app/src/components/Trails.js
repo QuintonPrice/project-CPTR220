@@ -10,7 +10,7 @@ class Trails extends Component {
                 <NavBar />
                 <DarkMode />
                 <Header />
-                <Blurb />/
+                <Blurb />
                 <TrailList />
             </div>
         );
@@ -35,8 +35,8 @@ class NavBar extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="trails.html">Trails</a></li>
-                <li> <a href="../travel/travel.html">Travel</a></li>
-                <li> <a href="../housing/housing.html">Housing</a></li>
+                <li><a href="../travel/travel.html">Travel</a></li>
+                <li><a href="../housing/housing.html">Housing</a></li>
             </nav>
         );
     }
@@ -155,6 +155,8 @@ class TrailList extends Component {
         );
     }
 }
+
+
 
 
 export default Trails;
