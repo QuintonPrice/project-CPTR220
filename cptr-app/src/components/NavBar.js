@@ -8,7 +8,7 @@ class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link to="/trails">Trails</Link></li>
                 <li><Link to="/travel">Travel</Link></li>
                 <li><Link to="/covid">COVID Info</Link></li>

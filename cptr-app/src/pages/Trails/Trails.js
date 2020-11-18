@@ -3,19 +3,18 @@
 import React, { Component } from 'react';
 import WeatherDisplay from '../../components/WeatherApp.js'; // weather display component
 import Header from '../../components/Header.js'; // header component
-import NavBar from '../../components/NavBar.js'; // navbar component
-import Footer from '../../components/Footer.js'; // footer component
+import DarkMode from '../../components/DarkMode.js'; // darkmode component
 import './trails.css'; // trails css file
 
 class Trails extends Component {
     render() {
         return (
-            <body>
+            <div>
                 <WeatherDisplay />
                 <Header />
                 <Blurb />
                 <TrailList />
-            </body>
+            </div>
         );
     }
 }
