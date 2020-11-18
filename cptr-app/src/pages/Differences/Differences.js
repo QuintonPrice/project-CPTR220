@@ -1,7 +1,6 @@
 // Differences page
 
 import React, { Component } from 'react';
-import '../../main.css'; // main css file
 import './differences.css'
 
 const URL_TEMPLATE_ZIP_TO_DISTANCE =
@@ -169,7 +168,6 @@ class Differences extends Component {
     }
 }
 
-export default Differences;
 
 class LocalWeather extends Component {
     render() {
@@ -238,3 +236,5 @@ class InputBox extends Component {
         );
     }
 }
+
+export default Differences;

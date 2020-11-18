@@ -12,7 +12,7 @@ class WeatherDisplay extends Component {
         }
     }
 
-    handleSubmit = (event) => {
+    handleFormSubmit = (event) => {
         event.preventDefault();
         this.setState((currentState) => {
             let stateChanges = { locationSubmit: currentState.locationInput };
@@ -22,7 +22,7 @@ class WeatherDisplay extends Component {
         // console.log(this.state.locationSubmit);
     }
 
-    handleChange = (event) => {
+    handleFormChange = (event) => {
         event.preventDefault();
         this.setState({ locationInput: event.target.value });
     }
@@ -34,8 +34,8 @@ class WeatherDisplay extends Component {
                 <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
                 <p>Enter the city you wish to travel to below and see what the weather is like currently.</p>
 
-                <form onSubmit={this.handleSubmit} className="input">
-                    <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleChange}></input>
+                <form onSubmit={this.handleFormSubmit} className="input">
+                    <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleFormChange}></input>
                     <input type="submit"></input>
                 </form>
 
