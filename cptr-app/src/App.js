@@ -43,7 +43,7 @@ class App extends Component {
                         <Route path="/home" component={Home}></Route>
                         <Route path="/trails" component={Trails}></Route>
                         <Route path="/covid" component={Covid}></Route>
-                        <Route path="/Travel" component={Travel}></Route>
+                        <Route path="/travel" component={Travel}></Route>
                         <Redirect exact from="/" to="/home" />
                     </Switch>
                     <Footer />

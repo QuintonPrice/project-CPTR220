@@ -3,17 +3,47 @@
 import React, { Component } from 'react';
 
 class WeatherDisplay extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            locationInput: '',
+            locationSubmit: 'Seattle'
+        }
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.setState((currentState) => {
+            let stateChanges = { locationSubmit: currentState.locationInput };
+            return stateChanges;
+        })
+        //this.setState({ locationSubmit: this.state.locationInput });
+        // console.log(this.state.locationSubmit);
+    }
+
+    handleChange = (event) => {
+        event.preventDefault();
+        this.setState({ locationInput: event.target.value });
+    }
+
     render() {
         return (
+            // weather output container
             <div className="container" id="weather">
                 <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
                 <p>Enter the city you wish to travel to below and see what the weather is like currently.</p>
-                <WeatherInfo />
+
+                <form onSubmit={this.handleSubmit} className="input">
+                    <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleChange}></input>
+                    <input type="submit"></input>
+                </form>
+
+                <WeatherInfo location={this.state.locationSubmit}/>
             </div>
         );
     }
 }
-
 
 class WeatherInfo extends Component {
 
@@ -21,6 +51,7 @@ class WeatherInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            location: this.props.location,
             nameVal: '',
             tempCur: '',
             tempMax: '',
@@ -32,7 +63,7 @@ class WeatherInfo extends Component {
     // function that gets API information
     // CHANGE THIS TO BE DYNAMIC!
     componentDidMount() {
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=puyallup&units=imperial&appid=fa7db483534aae10d27013e2df031ed2')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + this.props.location + '&units=imperial&appid=fa7db483534aae10d27013e2df031ed2')
             .then(res => res.json())
             .then((data) => {
                 this.setState({
@@ -48,7 +79,8 @@ class WeatherInfo extends Component {
     }
 
     render() {
-        console.log(this.state.nameValue); // test log
+        //this.loadAPI();
+        console.log("WeatherInfo location: ",this.props.location);
         return (
             // prints weather info
             <div>

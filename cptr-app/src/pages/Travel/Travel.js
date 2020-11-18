@@ -1,7 +1,6 @@
 // Travel page
 
 import React, { Component } from 'react';
-import '../../main.css'; // main css file
 
 class Travel extends Component {
     render() {
