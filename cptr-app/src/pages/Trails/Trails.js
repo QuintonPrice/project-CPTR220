@@ -5,7 +5,6 @@ import WeatherDisplay from '../../components/WeatherApp.js'; // weather display 
 import Header from '../../components/Header.js'; // header component
 import NavBar from '../../components/NavBar.js'; // navbar component
 import Footer from '../../components/Footer.js'; // footer component
-import '../../main.css'; // main css file
 import './trails.css'; // trails css file
 
 class Trails extends Component {
@@ -16,7 +15,6 @@ class Trails extends Component {
                 <Header />
                 <Blurb />
                 <TrailList />
-                <Footer />
             </body>
         );
     }
