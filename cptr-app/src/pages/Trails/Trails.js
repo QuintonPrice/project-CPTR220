@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import WeatherDisplay from '../../components/WeatherApp.js'; // weather display component
 import Header from '../../components/Header.js'; // header component
-import DarkMode from '../../components/DarkMode.js'; // darkmode component
 import './trails.css'; // trails css file
 
 class Trails extends Component {

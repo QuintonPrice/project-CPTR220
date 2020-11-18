@@ -13,7 +13,6 @@ import Travel from './pages/Travel/Travel.js';
 // component imports
 import NavBar from './components/NavBar.js';
 import Footer from './components/Footer.js';
-import DarkMode from './components/DarkMode.js';
 
 // this is what will render for EVERY page.
 // when you click a link in the navbar, it simply re-renders the page with the content from that component
