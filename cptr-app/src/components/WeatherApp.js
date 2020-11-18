@@ -30,7 +30,7 @@ class WeatherDisplay extends Component {
     render() {
         return (
             // weather output container
-            <div className="container" id="weather">
+            <div className="container" id="weather-app">
                 <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
                 <p>Enter the city you wish to travel to below and see what the weather is like currently.</p>
 
