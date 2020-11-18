@@ -1,10 +1,10 @@
 // Trails page
 
 import React, { Component } from 'react';
-import WeatherDisplay from '../components/WeatherApp.js';
-import Header from '../components/Header.js'; // header component
-import NavBar from '../components/NavBar.js'; // navbar component
-import '../main.css'; // main css file
+import WeatherDisplay from '../../components/WeatherApp.js';
+import Header from '../../components/Header.js'; // header component
+import NavBar from '../../components/NavBar.js'; // navbar component
+import '../../main.css'; // main css file
 import './trails.css'; // trails css file
 
 class Trails extends Component {
