@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import HomeApp from './components/Home.js'
-import reportWebVitals from './reportWebVitals';
+import React from 'react'; // imports React
+import ReactDOM from 'react-dom'; 
+import App from './App.js';
 
-ReactDOM.render(<HomeApp />, document.getElementById('root'));
-
+// renders App, which renders page
+ReactDOM.render(<App />, document.getElementById('root'));
