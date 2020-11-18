@@ -14,18 +14,20 @@ import Travel from './pages/Travel/Travel.js';
 import NavBar from './components/NavBar.js';
 import Footer from './components/Footer.js';
 
+// this is what will render for EVERY page.
+// when you click a link in the navbar, it simply re-renders the page with the content from that component
 class App extends Component {
     render() {
         return (
             <Router>
                 <NavBar />
                 <Switch>
-                    <Route path="/home" component={Home}></Route>
+                    <Route path="/" component={Home}></Route>
                     <Route path="/trails" component={Trails}></Route>
                     <Route path="/covid" component={Covid}></Route>
                     <Route path="/Travel" component={Travel}></Route>
                 </Switch>
-                <Footer/>
+                <Footer />
             </Router>
         );
     }
