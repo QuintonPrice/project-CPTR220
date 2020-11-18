@@ -10,7 +10,7 @@ class NavBar extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/trails">Trails</Link></li>
-                <li><Link to="/travel">Travel</Link></li>
+                <li><Link to="/differences">Differences</Link></li>
                 <li><Link to="/covid">COVID Info</Link></li>
             </nav>
         );
