@@ -1,22 +1,23 @@
 // Trails page
 
 import React, { Component } from 'react';
-import WeatherDisplay from '../../components/WeatherApp.js';
+import WeatherDisplay from '../../components/WeatherApp.js'; // weather display component
 import Header from '../../components/Header.js'; // header component
 import NavBar from '../../components/NavBar.js'; // navbar component
+import Footer from '../../components/Footer.js'; // footer component
 import '../../main.css'; // main css file
 import './trails.css'; // trails css file
 
 class Trails extends Component {
     render() {
         return (
-            <div>
+            <body>
                 <WeatherDisplay />
-                <NavBar />
                 <Header />
                 <Blurb />
                 <TrailList />
-            </div>
+                <Footer />
+            </body>
         );
     }
 }
