@@ -1,0 +1,21 @@
+.selections{
+    padding-top: 1em;
+}
+
+.buttonTxt{
+    margin-top: 1em;
+    border-top: solid black 1px;
+    text-align: center;
+    
+}
+
+.input{
+    font-size: 20px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    margin-top: 16px;
+    border: 0;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
