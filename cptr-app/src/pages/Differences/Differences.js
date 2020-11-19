@@ -25,7 +25,7 @@ class Differences extends Component {
         });
         let promiseArray =  Promise.all([this.fetchWeather(locationCode, '#localWeather'), 
                             this.fetchWeather('98101', '#setWeather'), 
-                            this.fetchDistance(this.state.location, '98101')]);
+                            this.fetchDistance(locationCode, '98101')]);
         this.processData(promiseArray);
     }
 
