@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 // css import
 import './main.css'; // main css file
