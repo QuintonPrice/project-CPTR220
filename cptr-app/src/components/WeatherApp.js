@@ -70,7 +70,7 @@ class WeatherDisplay extends Component {
             // weather output container
             <div className="container" id="weather-app">
                 <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
-                <p>Enter the city you wish to travel to below and double-click 'Submit' to see what the weather is like currently.</p>
+                <p>Enter the city you wish to travel to below and click 'Submit' to see what the weather is like currently.</p>
 
                 <form onSubmit={this.handleFormSubmit} className="input">
                     <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleFormChange}></input>
