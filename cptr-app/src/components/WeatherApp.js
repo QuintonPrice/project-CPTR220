@@ -50,9 +50,7 @@ class WeatherDisplay extends Component {
                 });
             })
             // handles invalid city inputs
-            .catch(function () {
-                return alert("Invalid city name!");
-            });
+            .catch(console.log);
     }
 
     handleFormSubmit = (event) => {
