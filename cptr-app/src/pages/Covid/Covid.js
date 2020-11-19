@@ -199,6 +199,7 @@ class CovidAPI extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.props.cityValue);
         var totalActiveSum = 0;
         var totalConfirmedSum = 0;
         var totalDeathsSum = 0;
@@ -288,8 +289,8 @@ class CovidAPI extends Component{
                         .then((data) => {
                           this.setState({
                               totalActive: data["data"][0]["active"],
-                              totalConfirmed: data["data"][0]["confirmed"],
-                              totalDeaths: data["data"][0]["deaths"],
+                              totalConfirmed: data["data"][0]["region"]["cities"][0]["confirmed"],
+                              totalDeaths: data["data"][0]["region"]["cities"][0]["deaths"],
                               isGraph: <Graph active={this.state.totalActive} confirmed={this.state.totalConfirmed} death={this.state.totalDeaths} typeGraph={this.props.typeGraph}/>
                           })
                         })
