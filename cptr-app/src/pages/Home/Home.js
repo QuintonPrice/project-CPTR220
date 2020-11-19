@@ -12,6 +12,7 @@ class Home extends Component {
                 <SectionTrails />
                 <SectionDifferences />
                 <SectionCovid />
+                <SectionSeattle />
             </div>
         )
     }
@@ -91,6 +92,25 @@ class SectionCovid extends Component {
                     the wonderful Pacific Northwest.
                 </p>
                 <img src="https://southkingstownri.com/ImageRepository/Document?documentID=3809" alt="Covid Tracking"></img>
+            </div>
+        )
+    }
+}
+
+class SectionSeattle extends Component {
+    render() {
+        return (
+            <div className="container">
+                <h2>What to do in Seattle</h2>
+                <hr></hr>
+                <p>
+                    If you are fully committed to visiting Seattle to see what it has to offer,
+                    we have a page which can guide you in the right direction called 'Attractions'.
+                    Here you will find many handpicked places to visit that you cant miss while you
+                    are here. From the world famous Space Needle to the hidden gem boutiques, you'll
+                    never run out of places to explore and new things to experience.
+                </p>
+                <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2019/05/ccimage-shutterstock_328088189.jpg" alt="Seattle Pic"></img>
             </div>
         )
     }
