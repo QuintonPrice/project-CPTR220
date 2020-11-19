@@ -304,7 +304,7 @@ class CovidAPI extends Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit} >
-                <input type="submit" className="input"></input>
+                <input type="submit" className="covid-input"></input>
                 <p className="buttonTxt">Double Click For Results(If Left Empty Nothing Happens)</p>
                 {this.state.isGraph}
             </form>
