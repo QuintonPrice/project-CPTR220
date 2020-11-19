@@ -9,10 +9,10 @@ class Trails extends Component {
     render() {
         return (
             <div>
-                <WeatherDisplay />
                 <Header />
                 <Blurb />
                 <TrailList />
+                <WeatherDisplay />
             </div>
         );
     }
