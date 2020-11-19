@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project-CPTR220/static/css/main.88eb9195.chunk.css",
+    "main.css": "/project-CPTR220/static/css/main.e751e06f.chunk.css",
     "main.js": "/project-CPTR220/static/js/main.d16eea90.chunk.js",
     "main.js.map": "/project-CPTR220/static/js/main.d16eea90.chunk.js.map",
     "runtime-main.js": "/project-CPTR220/static/js/runtime-main.0bcb49f1.js",
@@ -8,14 +8,14 @@
     "static/js/2.b03aa531.chunk.js": "/project-CPTR220/static/js/2.b03aa531.chunk.js",
     "static/js/2.b03aa531.chunk.js.map": "/project-CPTR220/static/js/2.b03aa531.chunk.js.map",
     "index.html": "/project-CPTR220/index.html",
-    "static/css/main.88eb9195.chunk.css.map": "/project-CPTR220/static/css/main.88eb9195.chunk.css.map",
+    "static/css/main.e751e06f.chunk.css.map": "/project-CPTR220/static/css/main.e751e06f.chunk.css.map",
     "static/js/2.b03aa531.chunk.js.LICENSE.txt": "/project-CPTR220/static/js/2.b03aa531.chunk.js.LICENSE.txt",
     "static/media/main.css": "/project-CPTR220/static/media/topography_dark.5ced11a7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0bcb49f1.js",
     "static/js/2.b03aa531.chunk.js",
-    "static/css/main.88eb9195.chunk.css",
+    "static/css/main.e751e06f.chunk.css",
     "static/js/main.d16eea90.chunk.js"
   ]
 }
