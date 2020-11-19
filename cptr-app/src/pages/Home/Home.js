@@ -1,6 +1,7 @@
 // Home page
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'; // imports link functionality
 import '../../main.css'; // main css file
 import '../Home/home.css' // Not sure if this will be used
 
@@ -31,7 +32,7 @@ class Header extends Component {
 class SectionTrails extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container home">
                 <h2>Interested in Hitting the Local Trails?</h2>
                 <hr></hr>
                 <p>If you are one of those people who gets excited to hop on your
@@ -45,7 +46,7 @@ class SectionTrails extends Component {
                       to show you exactly the info you need to know.
 
                 </p>
-                <img src="https://theloamwolf.com/wp-content/uploads/2020/11/Sandy-Ride-Shirbach-1-1200x800.jpg" alt="Local Trails"></img>
+                <Link to="/trails"><img src="https://theloamwolf.com/wp-content/uploads/2020/11/Sandy-Ride-Shirbach-1-1200x800.jpg" alt="Local Trails"></img></Link>
             </div>
         )
     }
@@ -54,7 +55,7 @@ class SectionTrails extends Component {
 class SectionDifferences extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container home">
                 <h2>How About the Weather?</h2>
                 <hr></hr>
                 <p>We well know that weather can make or break a trip to the wonderful
@@ -67,7 +68,7 @@ class SectionDifferences extends Component {
                     between that and Seattle. We hope this helps you decide where to go
                     for your weekend excursion.
                 </p>
-                <img src="https://www.eopugetsound.org/sites/default/files/topical_article/images/SoundScience2007reprint_Page_022_Image_0005.png" alt="PNW Weather"></img>
+                <Link to="/differences"><img src="https://www.eopugetsound.org/sites/default/files/topical_article/images/SoundScience2007reprint_Page_022_Image_0005.png" alt="PNW Weather"></img></Link>
             </div>
         )
     }
@@ -76,7 +77,7 @@ class SectionDifferences extends Component {
 class SectionCovid extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container home">
                 <h2>Want to Stay Safe?</h2>
                 <hr></hr>
                 <p>
@@ -90,7 +91,7 @@ class SectionCovid extends Component {
                     would be safe for you to go. We hope you are still able to come enjoy
                     the wonderful Pacific Northwest.
                 </p>
-                <img src="https://southkingstownri.com/ImageRepository/Document?documentID=3809" alt="Covid Tracking"></img>
+                <Link to="/covid"><img src="https://southkingstownri.com/ImageRepository/Document?documentID=3809" alt="Covid Tracking"></img></Link>
             </div>
         )
     }

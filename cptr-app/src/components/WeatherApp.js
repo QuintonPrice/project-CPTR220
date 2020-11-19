@@ -38,7 +38,7 @@ class WeatherDisplay extends Component {
                     <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleFormChange}></input>
                     <input type="submit"></input>
                 </form>
-
+                <hr></hr>
                 <WeatherInfo location={this.state.locationSubmit}/>
             </div>
         );

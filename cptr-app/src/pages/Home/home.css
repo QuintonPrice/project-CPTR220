@@ -1,6 +1,21 @@
-img {
+/* home container */
+.container {
+    margin-top: 40px;
+}
+
+/* home paragraph*/
+.home p {
     display: block;
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* home img */
+.home img {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
 }
