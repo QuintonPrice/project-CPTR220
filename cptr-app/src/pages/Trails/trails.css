@@ -67,8 +67,10 @@ iframe {
 }
 
 /* weather submit button */
-#weather-app .submit-button {
+#submit-button {
     margin-bottom: 0.5em;
+    color: white;
+    background-color: #13300f;
 }
 
 /* weather input field */

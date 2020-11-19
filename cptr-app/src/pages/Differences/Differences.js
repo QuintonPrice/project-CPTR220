@@ -229,7 +229,9 @@ class InputBox extends Component {
 
     render() {
         return(
+            
             <div className="input-group">
+                <p id="weather-p">Enter a zip code below to see the weather difference between it and Seattle!</p>
                 <input className="input-group-text" id="zip-input" type="text" placeholder="zipcode" value={this.state.value} onChange={this.handleChange}/>
                 <button className="btn btn-primary" id="zip-button" type='submit' onClick={this.handleSubmit}>Submit</button>
             </div>
