@@ -1,5 +1,9 @@
 /* CSS file for Trails page */
 
+a {
+    color: #a9714b;
+}
+
 /*dark mode button*/
 #dark_mode {
     display: block;
