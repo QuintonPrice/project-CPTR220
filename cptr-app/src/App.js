@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Route, BrowserRouter as Router, Switch, Link, Redirect } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 // css import
 import './main.css'; // main css file
 
 // page imports
 import Home from './pages/Home/Home.js';
+import Differences from './pages/Differences/Differences.js';
 import Trails from './pages/Trails/Trails.js';
 import Covid from './pages/Covid/Covid.js';
-import Differences from './pages/Differences/Differences.js';
 
 // component imports
 import NavBar from './components/NavBar.js';

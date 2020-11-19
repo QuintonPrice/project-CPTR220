@@ -9,10 +9,10 @@ class Trails extends Component {
     render() {
         return (
             <div>
-                <WeatherDisplay />
                 <Header />
                 <Blurb />
                 <TrailList />
+                <WeatherDisplay />
             </div>
         );
     }
@@ -71,12 +71,12 @@ class TrailList extends Component {
 
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.553442559852!2d-122.956630784113!3d50.11336491947661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5487234d0643925b%3A0x6f4a138d3cc4d3b6!2sWhistler%20Mountain%20Bike%20Park!5e0!3m2!1sen!2sus!4v1603345383168!5m2!1sen!2sus"
-                        width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false"
+                        width="600" height="450" frameBorder="0" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
 
                     <img src="https://theloamwolf.com/wp-content/uploads/2019/09/Whistler-91.jpg" alt="Whistler Bike Park Jump"></img>
 
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/L0HQvovVOsE" frameborder="0"
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/L0HQvovVOsE" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>

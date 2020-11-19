@@ -3,21 +3,7 @@
 import React, { Component } from 'react';
 
 class WeatherDisplay extends Component {
-    render() {
-        return (
-            <div className="container" id="weather">
-                <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
-                <p>Enter the city you wish to travel to below and see what the weather is like currently.</p>
-                <WeatherInfo />
-            </div>
-        );
-    }
-}
 
-
-class WeatherInfo extends Component {
-
-    //constructor for WeatherInfo
     constructor(props) {
         super(props);
         this.state = {
@@ -25,16 +11,35 @@ class WeatherInfo extends Component {
             tempCur: '',
             tempMax: '',
             tempMin: '',
-            descVal: ''
+            descVal: '',
+            locationInput: '', // state from form. constantly changing when typing
+            locationSubmit: 'Seattle' // state once form is submitted. used for API call
         }
     }
 
-    // function that gets API information
-    // CHANGE THIS TO BE DYNAMIC!
+    // renders as soon as page renders
+    // passes 'Seattle' to the API call
     componentDidMount() {
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=puyallup&units=imperial&appid=fa7db483534aae10d27013e2df031ed2')
+        this.retrieveData('Seattle');
+    }
+
+    // updates the api call when this.state.locationSubmit updates
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.locationSubmit !== this.state.locationSubmit) {
+            this.retrieveData(this.state.locationSubmit);
+        }
+        // if state.locationSubmit is the same, do not call API and log out message
+        else {
+            console.log("state.locationSubmit is same as before");
+        }
+    }
+
+    // function to retrieve data from API given an input for location
+    retrieveData = (input) => {
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input + '&units=imperial&appid=fa7db483534aae10d27013e2df031ed2')
             .then(res => res.json())
             .then((data) => {
+                console.log(data); // logs out API response
                 this.setState({
                     // stores weather info into state
                     nameVal: data['name'],
@@ -42,23 +47,45 @@ class WeatherInfo extends Component {
                     tempMax: data['main']['temp_max'],
                     tempMin: data['main']['temp_min'],
                     descVal: data['weather'][0]['description']
-                })
+                });
             })
-            .catch(console.log)
+            // handles invalid city inputs
+            .catch(console.log);
+    }
+
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+        // sets locationSubmit to be locationInput once form is submitted
+        this.setState({ locationSubmit: this.state.locationInput });
+    }
+
+    // updates the locationInput state when text is typed in form
+    handleFormChange = (event) => {
+        event.preventDefault();
+        this.setState({ locationInput: event.target.value });
     }
 
     render() {
-        console.log(this.state.nameValue); // test log
         return (
-            // prints weather info
-            <div>
+            // weather output container
+            <div className="container" id="weather-app">
+                <h3 className="font-weight-bold">Find the weather for your next trip!</h3>
+                <p>Enter the city you wish to travel to below and double-click 'Submit' to see what the weather is like currently.</p>
+
+                <form onSubmit={this.handleFormSubmit} className="input">
+                    <input type="text" className="inputValue form-control" placeholder="Type a city..." name="locationInput" onChange={this.handleFormChange}></input>
+                    <input type="submit" id="submit-button"></input>
+                </form>
+
+                <hr></hr>
+
                 <h3 className="font-weight bold">{this.state.nameVal}</h3>
+
                 <p>Weather: {this.state.descVal} </p>
                 <p>Current Temp: {this.state.tempCur} {String.fromCharCode(176)}F</p>
                 <p>Max Temp: {this.state.tempMax} {String.fromCharCode(176)}F</p>
                 <p>Min Temp: {this.state.tempMin} {String.fromCharCode(176)}F</p>
             </div>
-
         );
     }
 }

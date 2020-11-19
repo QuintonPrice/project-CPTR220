@@ -1,7 +1,6 @@
 // Differences page
 
 import React, { Component } from 'react';
-import '../../main.css'; // main css file
 import './differences.css'
 
 const URL_TEMPLATE_ZIP_TO_DISTANCE =
@@ -169,7 +168,6 @@ class Differences extends Component {
     }
 }
 
-export default Differences;
 
 class LocalWeather extends Component {
     render() {
@@ -231,10 +229,14 @@ class InputBox extends Component {
 
     render() {
         return(
+            
             <div className="input-group">
+                <p id="weather-p">Enter a zip code below to see the weather difference between it and Seattle!</p>
                 <input className="input-group-text" id="zip-input" type="text" placeholder="zipcode" value={this.state.value} onChange={this.handleChange}/>
                 <button className="btn btn-primary" id="zip-button" type='submit' onClick={this.handleSubmit}>Submit</button>
             </div>
         );
     }
 }
+
+export default Differences;
