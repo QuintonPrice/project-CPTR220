@@ -34,10 +34,38 @@ p {
     text-align: center;
 }
 
+#localWeather {
+    margin-left: 5%;
+}
+
+#setWeather {
+    margin-right: 5%;
+}
+
 #difference {
     display: none;
     width: 20%;
     text-align: center;
     margin-right: 5em;
     margin-left: 5em;
+}
+
+#zip-button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#zip-input {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 35px;
+}
+
+#weather-p {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
 }

@@ -4,7 +4,7 @@ Our teams CPTR220 project is a local guide for the area of Seattle. This would b
 
 # Members
 
- - [Quinton Price](https://github.com/QuintonPrice)
+ - [Quintin Price](https://github.com/QuintonPrice)
  - [Joel Hartman](https://github.com/joelhart)
  - [Mikhail Beresnev](https://github.com/Mikhail-Beresnev)
  - [Matija Benko](https://github.com/l-Mana-l)

@@ -1,3 +1,5 @@
+/* CSS file for Trails page */
+
 /*dark mode button*/
 #dark_mode {
     display: block;
@@ -42,12 +44,12 @@ iframe {
 }
 
 /* weather container */
-#weather {
+#weather-app {
     margin-top:35px;
 }
 
 /* weather input elements */
-#weather input {
+#weather-app input {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -55,27 +57,29 @@ iframe {
 }
 
 /* weather city name */
-#weather .city-name {
+#weather-app .city-name {
     padding-top: 10px;
 }
 
 /* weather text */
-#weather p {
+#weather-app p {
     text-align: center;
 }
 
 /* weather submit button */
-#weather .submit-button {
+#submit-button {
     margin-bottom: 0.5em;
+    color: white;
+    background-color: #13300f;
 }
 
 /* weather input field */
-#weather .inputValue {
+#weather-app .inputValue {
  width: 65%;
 }
 
 /* weather description */
-#weather .desc {
+#weather-app .desc {
     text-transform: capitalize;
 }
 
