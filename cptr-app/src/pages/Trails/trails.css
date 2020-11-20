@@ -87,6 +87,10 @@ iframe {
     text-transform: capitalize;
 }
 
+#small-p {
+    font-size: 1rem;
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: 80%;
