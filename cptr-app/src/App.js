@@ -45,6 +45,7 @@ class App extends Component {
                         <Route path="/covid" component={Covid}></Route>
                         <Route path="/differences" component={Differences}></Route>
                         <Redirect exact from="/" to="/home" />
+                        <Redirect to={{pathname: "/"}} />
                     </Switch>
                     <Footer />
                 </Router>
