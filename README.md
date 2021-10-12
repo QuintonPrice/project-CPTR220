@@ -2,6 +2,8 @@
 
 Our teams CPTR220 project is a local guide for the area of Seattle. This would be very helpful to anyone thinking about visiting Seattle and not knowing where to go or what to see. Our site includes subsections for relevant topics like hiking/biking trails, sites to see, and best places to stay.
 
+URL: https://quintonprice.github.io/project-CPTR220/#/home
+
 # Members
 
  - [Quinton Price](https://github.com/QuintonPrice)
